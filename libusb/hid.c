@@ -51,6 +51,8 @@
 
 #include "hidapi.h"
 
+/* libusb in aosp master branch does not need this */
+#if 0
 #ifdef __ANDROID__
 
 /* Barrier implementation because Android/Bionic don't have pthread_barrier.
@@ -110,6 +112,7 @@ static int pthread_barrier_wait(pthread_barrier_t *barrier)
 	}
 }
 
+#endif
 #endif
 
 #ifdef __cplusplus
